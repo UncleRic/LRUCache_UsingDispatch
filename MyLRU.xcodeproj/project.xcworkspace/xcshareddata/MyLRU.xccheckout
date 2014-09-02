@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8830BD22-C7B4-4E09-8D79-B1BCF66180AE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MyLRU</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>981EE1F0-1AB3-4C12-B803-D74E583569F4</key>
+		<string>https://github.com/UncleRic/LRUCache_UsingDispatch.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MyLRU.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>981EE1F0-1AB3-4C12-B803-D74E583569F4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/UncleRic/LRUCache_UsingDispatch.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>981EE1F0-1AB3-4C12-B803-D74E583569F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>981EE1F0-1AB3-4C12-B803-D74E583569F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LRUCache_UsingDispatch</string>
+		</dict>
+	</array>
+</dict>
+</plist>
