@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RicCache.m"
-            timestampString = "431637116.575623"
+            timestampString = "431637701.08333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "-cacheDirectoryForName:"
             landmarkType = "5">
          </BreakpointContent>

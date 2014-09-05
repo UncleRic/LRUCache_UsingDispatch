@@ -17,11 +17,17 @@ static dispatch_queue_t concurrentQueue;
 @end
 
 @implementation RicCache
++ (void)initialize {
+    if (self == [RicCache class]) {
+         concurrentQueue = dispatch_queue_create("com.AmourineTechn.SerialQueue", DISPATCH_QUEUE_CONCURRENT);
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
 
 - (instancetype)initWithName:(NSString *)name {
     if ((self = [super init])) {
         [self cacheDirectoryForName:name];
-        concurrentQueue = dispatch_queue_create("com.AmourineTechn.SerialQueue", DISPATCH_QUEUE_CONCURRENT);
     }
     return self;
 }
