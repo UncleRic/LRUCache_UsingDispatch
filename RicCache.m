@@ -76,19 +76,16 @@ static dispatch_queue_t concurrentQueue;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
+#pragma mark -
+// ...Getter: getting the current app version from its info.plist.
 
-- (void)dealloc {
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillTerminateNotification object:nil];
-    
+- (NSString *)appVersion {
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [infoDict objectForKey:(NSString *)kCFBundleVersionKey];
+    return version;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-#pragma mark -
 
 - (void)saveMemoryCacheToDisk:(NSNotification  *)notification {
     dispatch_barrier_async(concurrentQueue, ^{
@@ -122,18 +119,8 @@ static dispatch_queue_t concurrentQueue;
 }
 
 // -----------------------------------------------------------------------------------------------------------------------
-// ...Getter: getting the current app version from its info.plist.
 
-- (NSString *)appVersion {
-    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
-    NSString *version = [infoDict objectForKey:(NSString *)kCFBundleVersionKey];
-	return version;
-}
-
-
-// -----------------------------------------------------------------------------------------------------------------------
-
-- (NSData *)dataForFile:(NSString *)fileName {
+- (NSData *)dataFromFile:(NSString *)fileName {
         
     __block NSData *myData = nil;
     
@@ -188,7 +175,18 @@ static dispatch_queue_t concurrentQueue;
     // 1) Get data from either cache or file.
     // 2) Reposition data in cache.
     // 3) Unarchive (deSerialize) it.
-    return [NSKeyedUnarchiver unarchiveObjectWithData:[self dataForFile:@"RicItems.archive"]];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:[self dataFromFile:@"RicItems.archive"]];
+}
+
+// -----------------------------------------------------------------------------------------------------------------------
+#pragma mark -
+
+- (void)dealloc {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidReceiveMemoryWarningNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillTerminateNotification object:nil];
+    
 }
 
 
